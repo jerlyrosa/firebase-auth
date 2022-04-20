@@ -1,13 +1,11 @@
-import { extendTheme, theme as defaultTheme } from '@chakra-ui/react';
-import breakpoints from './breakpoints';
-import components from './components';
-import foundations from './foundations';
-import typography from './typography';
+import { extendTheme, theme as defaultTheme } from "@chakra-ui/react";
+import breakpoints from "./breakpoints";
+import components from "./components";
+import foundations from "./foundations";
 
 const theme = extendTheme(
   {
     components,
-    ...typography,
     ...foundations,
   },
   {
@@ -24,12 +22,14 @@ const theme = extendTheme(
     shadows: {},
     sizes: {},
     space: {},
-    fonts: typography.typography,
-    fontSizes: {},
-    fontWeights: {},
+    fonts: {
+      heading: "sans-serif",
+      body: "sans-serif",
+    },
+    // fontSizes: {},
+    // fontWeights: {},
     letterSpacings: {},
     lineHeights: {},
-
   }
 );
 export default theme;

@@ -15,12 +15,11 @@ function App() {
     <>
       <ChakraProvider  theme={theme} resetCSS={false}>
       <Box as ="h1"  textAlign="center"  textStyle="body4Uppercase">
-       THEMA LISTO
+          THEMA LISTO
         </Box>
       </ChakraProvider>
 
-
-
+ 
 
     </>
   );
