@@ -59,7 +59,7 @@ const Footer = styled(Flex)`
 
 `
 const Container = styled.div`
-  background-color:#f5f5f5;
+  /* background-color:#f5f5f5; */
   color: white;
   padding: 2rem 1rem;
   color: #4a4a4a;

@@ -1,23 +1,15 @@
-import { LoginForm } from './components/login-form';
-
-import { ChakraProvider } from '@chakra-ui/react'
-import Header from './components/header';
-import { Box, Heading, Text, Button } from "@chakra-ui/react";
-import Layout from './components/layout';
-
-import theme from "./theme/index";
+// import { LoginForm } from './components/login-form';
+import { RegisterForm } from './components/register-form';
 
 
 
-function App() {
+function App(): JSX.Element {
   return (
 
     <>
-      {/* <ChakraProvider theme={theme} resetCSS={false}> */}
 
-          <LoginForm />
-        {/* </Box> */}
-      {/* </ChakraProvider> */}
+      <RegisterForm />
+
     </>
   );
 }
