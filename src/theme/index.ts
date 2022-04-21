@@ -15,7 +15,23 @@ const theme = extendTheme(
     breakpoints,
     zIndices: defaultTheme.zIndices,
     components: {},
-    styles: {},
+    styles: {
+      global:{
+        html:{
+          fontSize: ' 62.5%',
+          boxSizing: 'border-box',
+        },
+        body:{
+          border: 'none',
+          margin: '0',
+          padding: '0',
+          boxSizing: 'border-box',
+          wordWrap: 'break-word',
+          wordBreak: 'break-word'
+
+        }
+      }
+    },
     borders: {},
     colors: {},
     radii: {},
@@ -26,7 +42,7 @@ const theme = extendTheme(
       heading: "sans-serif",
       body: "sans-serif",
     },
-    // fontSizes: {},
+    // fontSizes:{},
     // fontWeights: {},
     letterSpacings: {},
     lineHeights: {},

@@ -1,19 +1,21 @@
-import { useMediaQuery } from "@chakra-ui/media-query";
-import { Stack, Box } from "@chakra-ui/react";
-import React from "react";
-import { Global,css, } from "@emotion/react"
+import {  Box, Grid  } from "@chakra-ui/react";
 import {PropsChildrenType, } from './types/types'
+import Header from "./header";
+import FooterUI from "./footer";
 
 export default function Layout ({ children}:PropsChildrenType) {
-  const [isSmallScreen] = useMediaQuery("(max-width: 768px)");
+
   return (
-    <Box>
-      {/* <Header /> */}
-      <Box>
-        <Stack>
+
+    <Grid h="100vh" templateRows="auto 1fr auto"  >
+      <Header >
+        <h1>Formularios</h1>
+      </Header>
+      <Box  >
           {children}
-        </Stack>
       </Box>
-    </Box>
+
+     <FooterUI/>
+    </Grid >
   );
 }

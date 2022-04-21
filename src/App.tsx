@@ -1,6 +1,4 @@
-
-import './App.css';
-import { RegisterForm } from './components/register-form';
+import { LoginForm } from './components/login-form';
 
 import { ChakraProvider } from '@chakra-ui/react'
 import Header from './components/header';
@@ -9,18 +7,17 @@ import Layout from './components/layout';
 
 import theme from "./theme/index";
 
+
+
 function App() {
   return (
 
     <>
-      <ChakraProvider  theme={theme} resetCSS={false}>
-      <Box as ="h1"  textAlign="center"  textStyle="body4Uppercase">
-          THEMA LISTO
-        </Box>
-      </ChakraProvider>
+      {/* <ChakraProvider theme={theme} resetCSS={false}> */}
 
- 
-
+          <LoginForm />
+        {/* </Box> */}
+      {/* </ChakraProvider> */}
     </>
   );
 }
