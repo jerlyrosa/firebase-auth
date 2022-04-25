@@ -16,5 +16,5 @@ const space = {
     20: '8rem',
   } as const;
   
-  export type space = typeof space;
+   type space = typeof space;
   export default space;

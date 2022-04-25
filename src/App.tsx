@@ -1,16 +1,20 @@
-// import { LoginForm } from './components/login-form';
-import { RegisterForm } from './components/register-form';
+import { useState } from 'react';
+import AuthUI from './components/auth';
+import Home from './components/home';
+import Layout from './components/layout';
 
 
 
 function App(): JSX.Element {
+
+  const [user, setUser] = useState(null)
   return (
 
-    <>
+    <Layout>
 
-      <RegisterForm />
+      {user ? <Home /> : <AuthUI />}
 
-    </>
+    </Layout>
   );
 }
 

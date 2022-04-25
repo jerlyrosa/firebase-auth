@@ -4,17 +4,14 @@ import App from './App';
 import { ChakraProvider } from '@chakra-ui/react'
 
 import theme from "./theme/index";
-import FooterUI from "./components/footer";
 
 const rootElement = document.getElementById("root") as HTMLElement;
 const root = createRoot(rootElement) ;
 
 root.render(
   <StrictMode>
-      <ChakraProvider theme={theme} resetCSS={false}>
-    
-    <App />
-    {/* <FooterUI/> */}
+    <ChakraProvider theme={theme} resetCSS={false}>
+      <App />
     </ChakraProvider>
   </StrictMode>
 );

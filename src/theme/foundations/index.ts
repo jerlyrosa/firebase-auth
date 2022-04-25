@@ -1,4 +1,3 @@
-import borders from './borders';
 import colors from './colors';
 import space from './spacing'
 import textStyles from './textStyles';
