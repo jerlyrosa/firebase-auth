@@ -7,9 +7,9 @@ import { useState } from 'react';
 
 
 const LoginForm = (): JSX.Element => {
-    
-    const [show, setShow] = useState(false)
-    const handleClick = () => setShow(!show)
+
+    const [show, setShow] = useState<boolean>(false)
+    const handleClick = ():void => setShow(!show)
 
     return (
         <Layout >
