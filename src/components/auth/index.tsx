@@ -1,31 +1,32 @@
 import { FormControl, Box, Button, Stack } from "@chakra-ui/react";
 import { Heading } from "@chakra-ui/layout";
-import React, { useState,SyntheticEvent ,FC, Dispatch, SetStateAction} from "react";
+import { useState,  SyntheticEvent ,FC, Dispatch, SetStateAction} from "react";
 import styled from "@emotion/styled";
 import { LoginForm } from "./login-form";
 import { RegisterForm } from "./register-form";
-import { FormInterface } from "../interface";
 import { useMethodFirebase } from "../hooks/useMethodFirebase";
 
-
  interface Props {
-
-  setUser: Dispatch<SetStateAction<boolean>>
+  setUser: Dispatch<SetStateAction<boolean | undefined>>
+  setEmail: Dispatch<SetStateAction<string | undefined>>
 } 
 
 
 
-const  AuthUI: FC<Props> =({setUser}): JSX.Element => {
+const  AuthUI: FC<Props> =({setUser, setEmail}): JSX.Element => {
 
-    const [isRegister, setIsRegister] = useState<boolean>(false);
+const [isRegister, setIsRegister] = useState<boolean>(false);
 
 const {addFirebase}= useMethodFirebase();
 
 
 const onSummitFuntion = (e: SyntheticEvent): void => {
-     addFirebase(e).then((value) => {
-       if (value.length) setUser(true);
-     })
+  addFirebase(e).then((value) => {
+       if (typeof value === 'string') {
+         setEmail(value);
+         setUser(true);
+       }
+     });
 
 }
     return (

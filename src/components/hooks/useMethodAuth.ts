@@ -1,20 +1,20 @@
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
-import { useMethodFirebase } from "./useMethodFirebase";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
 
 
-// const {getNickName}=useMethodFirebase();
 
   export const useMethodAuth = () => {
-  
-    const addUserAuth = async (email:string, password:string): Promise<void> => {
-        const auth = getAuth();
+    const auth = getAuth();
 
-        createUserWithEmailAndPassword(auth, email, password)
+
+    const addUserAuth = async (email:string, password:string): Promise<unknown> => {
+
+        return createUserWithEmailAndPassword(auth, email, password)
           .then((userCredential) => {
             // Signed in
             const user = userCredential.user;
             console.log(user);
-            // ...
+          return user.email as string;
+
           })
           .catch((error) => {
             const errorCode = error.code;
@@ -22,6 +22,8 @@ import { useMethodFirebase } from "./useMethodFirebase";
 
             console.log(errorCode)
             console.log(errorMessage)
+          return false;
+
             // ..
           });
 
@@ -31,30 +33,51 @@ import { useMethodFirebase } from "./useMethodFirebase";
     const signInAuth = async (
       email: string,
       password: string
-    ): Promise<void> => {
-      const auth = getAuth();
-      signInWithEmailAndPassword(auth, email, password)
+    ): Promise<unknown> => {
+
+
+
+       return signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           // Signed in
-          console.log("inicie seccion")
           const user = userCredential.user;
-          console.log(user.email)
-          // ...
+
+          return user.email as string;
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
 
-          console.log("error")
+          console.log(errorCode);
+          console.log(errorMessage);
+          return false;
         });
-    };
-    
 
+
+
+
+    };
+
+
+
+
+    const AuthSignOut = async ():Promise<void>=>{
+      signOut(auth).then(() => {
+        // Sign-out successful.
+        console.log("Sign-out successful.")
+      }).catch((error) => {
+        // An error happened.
+        console.log("An error happened.", error)
+      });
+
+      
+    }
     
   
     return {
         addUserAuth,
-        signInAuth
+        signInAuth,
+        AuthSignOut
     } as const;
   };
   
