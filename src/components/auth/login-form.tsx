@@ -9,7 +9,7 @@ const LoginForm = (): JSX.Element => {
 
   return (
     <>
-      <FormLabel htmlFor="email" fontSize={{ base: "1.8rem" }}>
+      <FormLabel id="login" fontSize={{ base: "1.8rem" }}>
         User Name
       </FormLabel>
       <Input
@@ -17,7 +17,8 @@ const LoginForm = (): JSX.Element => {
         type="email"
         w="27rem"
         size="lg"
-        placeholder="Username"
+        placeholder="Email"
+        id="useremailaddress"
       />
 
       <FormLabel htmlFor="password" fontSize={{ base: "1.8rem" }}>
@@ -29,6 +30,7 @@ const LoginForm = (): JSX.Element => {
           type={show ? "text" : "password"}
           placeholder="Enter password"
           w="27rem"
+          id="userpassword"
         />
         <InputRightElement alignItems="self-end">
           <Checkbox onChange={handleClick}></Checkbox>
