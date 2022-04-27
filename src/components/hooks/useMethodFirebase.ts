@@ -35,15 +35,14 @@ const {addUserAuth, signInAuth }= useMethodAuth()
         password: password,
       })
         .then(() => {
-          addUserAuth(email, password).then((email)=> {
+          addUserAuth(email, password).then((email) => {
             console.log("User available");
             return email as string | boolean;
           });
-     
         })
         .catch((error) => {
           console.error("Upload failed", error);
-          return false
+          return false;
         });
 
 

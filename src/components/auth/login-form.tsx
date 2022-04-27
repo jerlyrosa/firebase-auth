@@ -17,6 +17,7 @@ const LoginForm = (): JSX.Element => {
         type="email"
         w="27rem"
         size="lg"
+        required
         placeholder="Email"
         id="useremailaddress"
       />
@@ -27,6 +28,7 @@ const LoginForm = (): JSX.Element => {
       <InputGroup size="md">
         <Input
           size="lg"
+          required
           type={show ? "text" : "password"}
           placeholder="Enter password"
           w="27rem"
@@ -34,7 +36,7 @@ const LoginForm = (): JSX.Element => {
         />
         <InputRightElement alignItems="self-end">
           <Checkbox onChange={handleClick}></Checkbox>
-              </InputRightElement>
+        </InputRightElement>
       </InputGroup>
     </>
   );
